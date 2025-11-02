@@ -1,5 +1,3 @@
-
-    
 """
 Todo API - Yksinkertainen tehtävälistan REST API
 FastAPI + SQLite + SQLAlchemy
