@@ -2,52 +2,52 @@
 
 Todella yksinkertainen REST API tehtävien hallintaan. Rakennettu FastAPI:lla ja SQLite-tietokannalla.
 
-## 🚀 Ominaisuudet
+Ominaisuudet
 
-- ✅ CRUD-operaatiot tehtäville (Create, Read, Update, Delete)
-- 📊 SQLite-tietokanta pysyvään tallennukseen
-- 🔄 Automaattinen API-dokumentaatio (Swagger UI)
-- ⚡ Nopea ja moderni FastAPI-framework
+- CRUD-operaatiot tehtäville (Create, Read, Update, Delete)
+- SQLite-tietokanta pysyvään tallennukseen
+- Automaattinen API-dokumentaatio (Swagger UI)
+- Nopea ja moderni FastAPI-framework
 
-## 📋 Vaatimukset
+Vaatimukset
 
 - Python 3.8+
 - pip (Python package manager)
 
-## 🛠️ Asennus
+Asennus
 
-1. **Kloonaa repositorio** (tai lataa ZIP)
+1. Kloonaa repositorio
 ```bash
 git clone <repository-url>
 cd todo-api
 ```
 
-2. **Luo virtuaaliympäristö**
+2. Luo virtuaaliympäristö
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
 # venv\Scripts\activate  # Windows
 ```
 
-3. **Asenna riippuvuudet**
+3. Asenna riippuvuudet
 ```bash
 pip install fastapi uvicorn sqlalchemy
 ```
 
-4. **Käynnistä serveri**
+4. Käynnistä serveri
 ```bash
 uvicorn main:app --reload
 ```
 
 Serveri käynnistyy osoitteessa: `http://localhost:8000`
 
-## 📖 API-dokumentaatio
+API-dokumentaatio
 
-### Automaattinen dokumentaatio
+Automaattinen dokumentaatio
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
 
-### Endpointit
+Endpointit
 
 #### 1. Hae kaikki tehtävät
 ```http
@@ -105,7 +105,7 @@ DELETE /tasks/1
 }
 ```
 
-## 🗂️ Projektin rakenne
+Projektin rakenne
 ```
 todo-api/
 ├── main.py           # API-reititykset ja endpointit
@@ -115,14 +115,14 @@ todo-api/
 └── README.md         # Tämä tiedosto
 ```
 
-## 🧪 Testaus
+Testaus
 
-### Thunder Client (VS Code)
+Thunder Client (VS Code)
 1. Asenna Thunder Client -laajennus
 2. Luo uusi pyyntö
 3. Testaa endpointit yllä olevien esimerkkien mukaan
 
-### cURL
+cURL
 ```bash
 # Hae tehtävät
 curl http://localhost:8000/tasks
@@ -137,10 +137,10 @@ curl -X PUT "http://localhost:8000/tasks/1?completed=true"
 curl -X DELETE "http://localhost:8000/tasks/1"
 ```
 
-## 🔧 Teknologiat
+Teknologiat
 
 - **FastAPI** - Moderni Python web framework
-- **SQLAlchemy** - SQL-tietokanta ORM
+- **SQLAlchemy** - SQL-tieto)kanta ORM
 - **SQLite** - Kevyt tietokanta
 - **Uvicorn** - ASGI web server
 
@@ -151,7 +151,7 @@ Tämässä projektissa käytin :
 - Tietokannan integroinnin SQLAlchemyn avulla
 - API-dokumentoinnin ja testauksen
 
-## 🚀 Jatkokehitysideoita
+Jatkokehitysideoita
 
 - [ ] Lisää käyttäjäautentikointi (JWT)
 - [ ] Pydantic-mallit datan validointiin
