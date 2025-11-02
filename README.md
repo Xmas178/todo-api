@@ -18,7 +18,7 @@ Asennus
 
 1. Kloonaa repositorio
 ```bash
-git clone <repository-url>
+git clone https://github.com/Xmas178/todo-api.git
 cd todo-api
 ```
 
