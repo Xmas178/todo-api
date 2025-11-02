@@ -140,12 +140,12 @@ curl -X DELETE "http://localhost:8000/tasks/1"
 Teknologiat
 
 - **FastAPI** - Moderni Python web framework
-- **SQLAlchemy** - SQL-tieto)kanta ORM
+- **SQLAlchemy** - SQL-tietokanta ORM
 - **SQLite** - Kevyt tietokanta
 - **Uvicorn** - ASGI web server
 
 
-Tämässä projektissa käytin :
+Tässä projektissa käytin :
 - REST API:n perusteet ja HTTP-metodit (GET, POST, PUT, DELETE)
 - FastAPI-frameworkin käyttöä
 - Tietokannan integroinnin SQLAlchemyn avulla
