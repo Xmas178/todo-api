@@ -145,7 +145,7 @@ Teknologiat
 - **Uvicorn** - ASGI web server
 
 
-Tämässä projektissa käytin :
+Tässä projektissa käytin :
 - REST API:n perusteet ja HTTP-metodit (GET, POST, PUT, DELETE)
 - FastAPI-frameworkin käyttöä
 - Tietokannan integroinnin SQLAlchemyn avulla
