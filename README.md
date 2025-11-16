@@ -1,168 +1,177 @@
-# Todo API
+# TODO API
 
-Todella yksinkertainen REST API tehtävien hallintaan. Rakennettu FastAPI:lla ja SQLite-tietokannalla.
+A simple and clean REST API for task management, built with FastAPI and SQLite.
 
-Ominaisuudet
+## Features
 
-- CRUD-operaatiot tehtäville (Create, Read, Update, Delete)
-- SQLite-tietokanta pysyvään tallennukseen
-- Automaattinen API-dokumentaatio (Swagger UI)
-- Nopea ja moderni FastAPI-framework
+- **Full CRUD Operations** - Create, Read, Update, Delete tasks
+- **SQLite Database** - Persistent data storage
+- **Auto Documentation** - Interactive API docs with Swagger UI
+- **Fast & Modern** - Built on FastAPI framework
+- **Lightweight** - No external dependencies beyond Python packages
 
-Vaatimukset
+## Requirements
 
 - Python 3.8+
 - pip (Python package manager)
 
-Asennus
+## Installation
 
-1. Kloonaa repositorio
+**1. Clone the repository**
 ```bash
 git clone https://github.com/Xmas178/todo-api.git
 cd todo-api
 ```
 
-2. Luo virtuaaliympäristö
+**2. Create virtual environment**
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate  # Windows
+# venv\Scripts\activate   # Windows
 ```
 
-3. Asenna riippuvuudet
+**3. Install dependencies**
 ```bash
 pip install fastapi uvicorn sqlalchemy
 ```
 
-4. Käynnistä serveri
+**4. Run the server**
 ```bash
 uvicorn main:app --reload
 ```
 
-Serveri käynnistyy osoitteessa: `http://localhost:8000`
+Server will start at: **http://localhost:8000**
 
-API-dokumentaatio
+## API Documentation
 
-Automaattinen dokumentaatio
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+### Automatic Documentation
 
-Endpointit
+- **Swagger UI**: http://localhost:8000/docs
+- **ReDoc**: http://localhost:8000/redoc
 
-#### 1. Hae kaikki tehtävät
+### Endpoints
+
+#### Get All Tasks
 ```http
 GET /tasks
 ```
 
-**Vastaus:**
+**Response:**
 ```json
 [
   {
     "id": 1,
-    "task": "Opi FastAPI",
+    "task": "Learn FastAPI",
     "completed": false
   }
 ]
 ```
 
-#### 2. Lisää uusi tehtävä
+#### Create New Task
 ```http
-POST /tasks?task=Uusi tehtävä
+POST /tasks?task=New task
 ```
 
-**Vastaus:**
+**Response:**
 ```json
 {
   "id": 2,
-  "task": "Uusi tehtävä",
+  "task": "New task",
   "completed": false
 }
 ```
 
-#### 3. Päivitä tehtävän tila
+#### Update Task Status
 ```http
 PUT /tasks/1?completed=true
 ```
 
-**Vastaus:**
+**Response:**
 ```json
 {
   "id": 1,
-  "task": "Opi FastAPI",
+  "task": "Learn FastAPI",
   "completed": true
 }
 ```
 
-#### 4. Poista tehtävä
+#### Delete Task
 ```http
 DELETE /tasks/1
 ```
 
-**Vastaus:**
+**Response:**
 ```json
 {
-  "message": "Tehtävä poistettu"
+  "message": "Task deleted"
 }
 ```
 
-Projektin rakenne
+## Project Structure
+
 ```
 todo-api/
-├── main.py           # API-reititykset ja endpointit
-├── database.py       # Tietokanta-asetukset ja mallit
-├── todos.db          # SQLite-tietokanta (luodaan automaattisesti)
-├── venv/             # Virtuaaliympäristö
-└── README.md         # Tämä tiedosto
+├── main.py          # API routes and endpoints
+├── database.py      # Database configuration and models
+├── todos.db         # SQLite database (auto-generated)
+├── venv/            # Virtual environment
+└── README.md        # This file
 ```
 
-Testaus
+## Testing
 
-Thunder Client (VS Code)
-1. Asenna Thunder Client -laajennus
-2. Luo uusi pyyntö
-3. Testaa endpointit yllä olevien esimerkkien mukaan
+### Thunder Client (VS Code)
 
-cURL
+1. Install Thunder Client extension
+2. Create new request
+3. Test endpoints using examples above
+
+### cURL Examples
+
 ```bash
-# Hae tehtävät
+# Get all tasks
 curl http://localhost:8000/tasks
 
-# Lisää tehtävä
-curl -X POST "http://localhost:8000/tasks?task=Testitehtävä"
+# Create task
+curl -X POST "http://localhost:8000/tasks?task=Test%20task"
 
-# Päivitä tehtävä
+# Update task
 curl -X PUT "http://localhost:8000/tasks/1?completed=true"
 
-# Poista tehtävä
+# Delete task
 curl -X DELETE "http://localhost:8000/tasks/1"
 ```
 
-Teknologiat
+## Technologies
 
-- **FastAPI** - Moderni Python web framework
-- **SQLAlchemy** - SQL-tieto)kanta ORM
-- **SQLite** - Kevyt tietokanta
+- **FastAPI** - Modern Python web framework
+- **SQLAlchemy** - SQL database ORM
+- **SQLite** - Lightweight database
 - **Uvicorn** - ASGI web server
 
+## What I Learned
 
-Tässä projektissa käytin :
-- REST API:n perusteet ja HTTP-metodit (GET, POST, PUT, DELETE)
-- FastAPI-frameworkin käyttöä
-- Tietokannan integroinnin SQLAlchemyn avulla
-- API-dokumentoinnin ja testauksen
+- REST API fundamentals and HTTP methods (GET, POST, PUT, DELETE)
+- FastAPI framework usage and best practices
+- Database integration with SQLAlchemy ORM
+- API documentation and interactive testing tools
+- Building clean and maintainable API structure
 
-Jatkokehitysideoita
+## Future Development Ideas
 
-- [ ] Lisää käyttäjäautentikointi (JWT)
-- [ ] Pydantic-mallit datan validointiin
-- [ ] PostgreSQL-tuki tuotantokäyttöön
-- [ ] Yksikkötestit (pytest)
-- [ ] Docker-konttitus
-- [ ] Frontend (React/Vue)
+- Add user authentication (JWT)
+- Implement Pydantic models for data validation
+- PostgreSQL support for production
+- Unit tests with pytest
+- Docker containerization
+- Frontend integration (React/Vue)
 
+## Author
 
----
+**Xmas178**  
+November 2024  
+Portfolio Project
 
-Tekijä: Sami Tommilammi  
-Päivämäärä: 2.11.2025  
-Projekti: Portfolio-projekti
+## License
+
+This project is open source and available for learning purposes.
